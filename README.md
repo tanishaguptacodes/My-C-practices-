@@ -1,24 +1,18 @@
-# 💰 Profit and Loss Calculator (C Program)
+# 💻 C Programs for Practice
 
-This is a simple C program that calculates whether a seller made a **profit**, **loss**, or **no profit/loss** based on the **cost price** and **selling price** entered by the user.
-
----
-
-## 🧠 How It Works
-
-- Takes two inputs from the user:
-  - Cost Price
-  - Selling Price
-- Checks the condition:
-  - If Selling Price > Cost Price → Profit
-  - If Cost Price > Selling Price → Loss
-  - If both are equal → No profit/loss
-- Prints the result with amount
+This repository contains basic C programs that I am writing as part of my learning journey.  
+It helps me understand the fundamentals of C programming like input/output, conditions, loops, and logic building.
 
 ---
 
-## 🧪 Sample Output
-Enter cost price: 100  
-Enter selling price: 130  
-Seller has made a profit.  
-Profit of 30 rupees.
+## 📌 About Me
+
+I'm **Tanisha Gupta**, a B.Tech CSE (IoT) student from RGPV.  
+Currently learning C, C++, and DSA.  
+This repository is part of my practice to improve my programming skills step by step.
+
+---
+
+## 🚀 Note
+
+I will keep adding more C programs here as I learn new topics.
