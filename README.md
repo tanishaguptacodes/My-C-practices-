@@ -1,7 +1,7 @@
-# 💻 C Programs for Practice
+# 💻 C/c++ Programs for Practice
 
-This repository contains basic C programs that I am writing as part of my learning journey.  
-It helps me understand the fundamentals of C programming like input/output, conditions, loops, and logic building.
+This repository contains basic C/c++ programs that I am writing as part of my learning journey.  
+It helps me understand the fundamentals of C/c++ programming like input/output, conditions, loops, and logic building.
 
 ---
 
