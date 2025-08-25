@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n,b=1;
+    int i =1;
+    cout << "Enter a number:";
+    cin>>n;
+    while(i<=n){
+        b*=i;
+        i++;
+    }
+    cout<<"factorial is:"<<b;
+
+    return 0;
+}
