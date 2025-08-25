@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a,b,max,c;
+    cout << "Enter three numbers:";
+    cin>>a>>b>>c;
+    max=a;
+    if(b>a && b>c){
+       cout<<"biggest  numbers is "<<b;
+    }
+    else if(c>a && c>b){
+        cout<<"biggest  numbers is "<<c;
+    }
+    else{
+        cout<<"biggest  numbers is "<<a;
+    }
+    return 0;
+}
