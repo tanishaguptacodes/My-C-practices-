@@ -1,0 +1,28 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main() {
+    int a,t,o,s=0,d=0,r;
+    cout << "enter a number:";
+    cin>>a;
+    o=a;
+    t=a;
+    while (t>0){
+        r=t%10;
+        t=t/10;
+        d++;
+    }
+    t=a;
+    while(t>0){
+        r=t%10;
+        s+=pow(r,d);
+        t=t/10;
+    }
+    if(s==o){
+        cout<<"number is an armstrong ";
+    }
+    else{
+        cout<<"number is not an armstrong ";
+    }
+    return 0;
+}
