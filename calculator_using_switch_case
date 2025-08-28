@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a,b;
+    char c;
+    cout<<"CALCULATOR"<<endl;
+    cout<<"Enter a number 1:";
+    cin>>a;
+    cout<<"Enter a number 2:";
+    cin>>b;
+    cout<<"Operations"<<endl;
+    cout<<"+"<<endl<<"-"<<endl<<"*"<<endl<<"/"<<endl<<"%"<<endl;
+    cout<<"choose operation:";
+    cin>>c;
+    switch(c){
+        case('+'):
+        cout<<"sum is :"<<a+b;
+        break;
+        case('-'):
+        cout<<"subtraction is :"<<a-b;
+        break;
+        case('*'):
+        cout<<"multiplication is :"<<a*b;
+        break;
+        case('/'):
+        if(b!=0){
+            cout<<"divison is :"<<a/b;
+        }
+        else{
+            cout<<"invalid number for this operation ";
+        }
+        break;
+        case('%'):
+        if(b!=0){
+            cout<<"remainder is :"<<a%b;
+        }
+        else{
+            cout<<"invalid number for this operation ";
+        }
+        break;
+        default:
+        cout<<"invalid operation";
+    }
+    return 0;
+}
