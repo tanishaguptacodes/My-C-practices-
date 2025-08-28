@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a, t, d = 0, r;
+    cout << "enter a number: ";
+    cin >> a;
+    t = a;
+
+    while (t > 0) {
+        r = t % 10; 
+        t = t / 10;
+        d++;  
+    }
+
+    cout << "Number of digits is : " << d;
+    return 0;
+}
