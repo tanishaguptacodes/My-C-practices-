@@ -19,6 +19,6 @@ int main()
 		printf(" seller has loss ");
 		l= cost_price-selling_price;
 		printf("loss of %d rupees",l);
-	}
+	
 	return 0;
 }
