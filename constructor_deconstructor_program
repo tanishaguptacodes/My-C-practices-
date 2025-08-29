@@ -14,7 +14,7 @@ class student{
         cout<<"Enter roll number:";
         cin>>r;
         cout<<"constructor is created with the information you have given"<<endl;
-        cout<<"After this the constructor part will be end and deconstructor will play their part"<<endl;
+        cout<<"After this the constructor part will be end and destructor will play their part"<<endl;
         
     }
     ~student(){
