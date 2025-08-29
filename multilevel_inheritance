@@ -1,0 +1,45 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+class student{
+    private:
+    int roll;
+    string name;
+    public:
+    void details(){
+        cout<<"Enter name:";
+        cin>>name;
+        cout<<"Enter roll number:";
+        cin>>roll;
+    }
+    void displaydetails(){
+        cout<<"Name:"<<name<<endl;
+        cout<<"Roll number:"<<roll<<endl;
+    }
+};
+class marks:public student {
+    public:
+    int e,h;
+    void mark (){
+        cout<<"Enter English marks out of 100:";
+        cin>>e;
+        cout<<"Enter Hindi marks out of 100:";
+        cin>>h;
+    }
+};
+class result:public marks{
+    public:
+    void total(){
+        cout<<"Total marks:"<<e+h<<"/100";
+    }
+};
+int main() {
+    result obj1;
+    marks obj2;
+    obj2.details();
+    obj1.mark();
+    obj2.displaydetails();
+    obj1.total();
+    return 0;
+}
