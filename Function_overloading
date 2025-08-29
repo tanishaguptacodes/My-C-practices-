@@ -1,0 +1,60 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+class Area{
+    private:
+    int r,l,b,t;
+    public:
+    Area(int a,int b){
+        cout<<"Area of rectangle is: "<<a*b;
+    }
+    Area(int a){
+        cout<<"Area of circle is: "<<3.14*pow(a,2);
+    }
+    Area(int a,int b, int c){
+        int d=(a+b+c)/2;
+        int z=d*(d-a)*(d-b)*(d-c);
+        int x=sqrt(z);
+        cout<<"Area of triangle is:"<<x;
+    }
+    
+};
+
+
+int main() {
+    int c;
+    cout<<"1.Rectangle"<<endl;
+    cout<<"2.Circle"<<endl;
+    cout<<"3.Triangle"<<endl;
+    cout<<"which shape you want to calculate Area for choose from above options: ";
+    cin>>c;
+    if(c==1){
+        int l,m;
+        cout<<"Enter length:";
+        cin>>l;
+        cout<<"Enter bredth:";
+        cin>>m;
+        Area obj(l,m);
+    }
+    else if(c==2){
+        int r;
+        cout<<"Enter radius:";
+        cin>> r;
+        Area obj(r);
+    }
+    else if(c==3){
+        int l1,l2,l3;
+        cout<<"Enter length of side 1:";
+        cin>> l1;
+        cout<<"Enter length of side 2:";
+        cin>> l2;
+        cout<<"Enter length of side3:";
+        cin>> l3;
+        Area obj(l1,l2,l3);
+    }
+    else{
+        cout<<"Invalid choice";
+    }
+    return 0;
+}
