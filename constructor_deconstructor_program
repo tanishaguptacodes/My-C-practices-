@@ -1,0 +1,31 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+class student{
+    private:
+    int r;
+    string n;
+    public:
+    student(){
+        cout<<"CONSTRUCTOR PART"<<endl;
+        cout<<"Enter name:";
+        cin>>n;
+        cout<<"Enter roll number:";
+        cin>>r;
+        cout<<"constructor is created with the information you have given"<<endl;
+        cout<<"After this the constructor part will be end and deconstructor will play their part"<<endl;
+        
+    }
+    ~student(){
+        cout<<"DECONSTRUCTOR PART"<<endl;
+        cout<<"Deconstructor part is played and the information you had give is deleted";
+    }
+    
+};
+
+
+int main() {
+    student obj;
+    return 0;
+}
