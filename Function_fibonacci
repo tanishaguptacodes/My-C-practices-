@@ -11,7 +11,7 @@ void fibo(int p){
 }
 int main() {
     int n;
-    cout<<"Less then till =";
+    cout<<"Less than till =";
     cin>>n;
     fibo(n);
     return 0;
