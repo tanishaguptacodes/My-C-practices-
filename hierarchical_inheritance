@@ -4,7 +4,7 @@ using namespace std;
 class parent{
     public:
     void calc(){
-        cout<<"calculation of shape"<<endl;
+        cout<<"Area of shape"<<endl;
     }
 };
 class child1:public parent {
@@ -26,7 +26,7 @@ class child2:public parent{
     void circle(){
         cout<<"Enter radius of circle:";
         cin>>r;
-        cout<<"Radius of circle:"<<3.14*r*r;
+        cout<<"Area of circle:"<<3.14*r*r;
     }
 };
 int main() {
