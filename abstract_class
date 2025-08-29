@@ -1,0 +1,25 @@
+#include <iostream>
+#include<string>
+using namespace std;
+class student {
+    private:
+    int r;
+    string n;
+    public:
+    void detail(){
+        cout<<"Enter name:";
+        cin>>n;
+        cout<<"Enter roll number:";
+        cin>>r;
+    }
+    void display (){
+        cout<<"Name:"<<n<<endl;
+        cout<<"Roll number:"<<r;
+    }
+};
+int main() {
+    student obj;
+    obj.detail();
+    obj.display();
+    return 0;
+}
