@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+void add(int x, int y = 5) {
+    cout << "Sum = " << x + y << endl;
+}
+
+int main() {
+    add(10);     
+    add(10, 20);
+    return 0;
+}
