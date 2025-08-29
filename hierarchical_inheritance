@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+class parent{
+    public:
+    void calc(){
+        cout<<"calculation of shape"<<endl;
+    }
+};
+class child1:public parent {
+    private:
+    int l,b;
+    public:
+    void rec (){
+        cout<<"Enter length of rectangle:";
+        cin>>l;
+        cout<<"Enter bredth of rectangle:";
+        cin>>b;
+        cout<<"Area pf rectangle is:"<<l*b<<endl;
+    }
+};
+class child2:public parent{
+    private:
+    int r;
+    public:
+    void circle(){
+        cout<<"Enter radius of circle:";
+        cin>>r;
+        cout<<"Radius of circle:"<<3.14*r*r;
+    }
+};
+int main() {
+    child1 obj1;
+    child2 obj2;
+    obj1.calc();
+    obj1.rec();
+    obj2.calc();
+    obj2.circle();
+    return 0;
+}
