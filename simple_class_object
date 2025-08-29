@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    void simple(){
+        cout<<"This is just a simple function of class"<<endl;
+    }
+    
+};
+
+
+int main() {
+    A obj;
+    obj.simple();
+    return 0;
+}
