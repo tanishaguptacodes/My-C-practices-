@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class child1 {
+    public:
+    void game1 (){
+        cout<<"1. Outdoor games"<<endl;
+    }
+};
+class child2{
+    public:
+    void game2(){
+        cout<<"2. Indoor games ";
+    }
+};
+class parent:public child1,public child2{
+    public:
+    void type(){
+        cout<<"There are 2 types of games"<<endl;
+    }
+};
+int main() {
+    parent obj;
+    obj.type();
+    obj.game1();
+    obj.game2();
+    return 0;
+}
