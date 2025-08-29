@@ -11,7 +11,7 @@ int sum(int a,int b){
 }
 int main() {
     int x, y= 0;
-    cout << "Enter number: ";
+    cout << "Enter group of number: ";
     cin >> x;
     sum(x,y);
     return 0;
