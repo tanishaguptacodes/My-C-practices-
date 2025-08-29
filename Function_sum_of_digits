@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int sum(int a,int b){
+    while (a > 0) {
+        b += a % 10; 
+        a = a / 10; 
+    }
+
+    cout << "Sum of digits is " << b;
+    return 0;
+}
+int main() {
+    int x, y= 0;
+    cout << "Enter number: ";
+    cin >> x;
+    sum(x,y);
+    return 0;
+}
