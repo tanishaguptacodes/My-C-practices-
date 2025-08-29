@@ -2,7 +2,7 @@
 using namespace std;
 int main() {
     int a, b= 0;
-    cout << "Enter number: ";
+    cout << "Enter group of number: ";
     cin >> a;
 
     while (a > 0) {
