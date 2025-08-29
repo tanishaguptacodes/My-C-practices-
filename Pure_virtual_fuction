@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+     virtual void child()=0;
+    
+};
+class B:public A {
+    public:
+    void child() override{
+        cout<<"This is class B(derived from class A)"<<endl;
+    }
+};
+class C:public A{
+    public:
+    void child() override {
+        cout<<"This is class C(derived from class A)"<<endl;
+    }
+};
+
+
+
+
+int main() {
+    A*ptr;
+    B obj2;
+    C obj3;
+    cout<<"In class B"<<endl;
+    ptr = &obj2;
+    ptr->child();
+    cout<<"In class C"<<endl;
+    ptr= &obj3;
+    ptr->child();
+    
+    return 0;
+}
