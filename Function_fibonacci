@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+void fibo(int p){
+    int i=0,b=1,o;
+    while(i<p){
+        cout<<i<<endl;
+        o=i+b;
+        i=b;
+        b=o;
+    }
+}
+int main() {
+    int n;
+    cout<<"Less then till =";
+    cin>>n;
+    fibo(n);
+    return 0;
+}
