@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    void parent(){
+        cout<<"This is class A(base class)"<<endl;
+    }
+    
+};
+class B:public A {
+    public:
+    void child1(){
+        cout<<"This is class B(derived from class A)"<<endl;
+    }
+};
+class C:public A{
+    public:
+    void child2(){
+        cout<<"This is class C(derived from class A)"<<endl;
+    }
+};
+class D:public B , public C{
+    public:
+    void child3(){
+        cout<<"This is class D(derived from class B and C)"<<endl;
+    }
+};
+
+int main() {
+    D obj1;
+    B obj2;
+    C obj3;
+    cout<<"In class B"<<endl;
+    obj2.parent();
+    obj2.child1();
+    cout<<"In class C"<<endl;
+    obj3.parent();
+    obj3.child2();
+    cout<<"In class D"<<endl;
+    obj1.B::parent();
+    obj1.C::parent();
+    obj1.child3();
+    
+    return 0;
+}
