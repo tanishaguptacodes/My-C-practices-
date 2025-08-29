@@ -18,8 +18,8 @@ class student{
         
     }
     ~student(){
-        cout<<"DECONSTRUCTOR PART"<<endl;
-        cout<<"Deconstructor part is played and the information you had give is deleted";
+        cout<<"DESTRUCTOR PART"<<endl;
+        cout<<"Destructor part is played and the information you had give is deleted";
     }
     
 };
