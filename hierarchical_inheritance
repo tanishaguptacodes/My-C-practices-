@@ -16,7 +16,7 @@ class child1:public parent {
         cin>>l;
         cout<<"Enter bredth of rectangle:";
         cin>>b;
-        cout<<"Area pf rectangle is:"<<l*b<<endl;
+        cout<<"Area of rectangle is:"<<l*b<<endl;
     }
 };
 class child2:public parent{
