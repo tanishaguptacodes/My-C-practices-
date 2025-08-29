@@ -31,7 +31,7 @@ class marks:public student {
 class result:public marks{
     public:
     void total(){
-        cout<<"Total marks:"<<e+h<<"/100";
+        cout<<"Total marks:"<<e+h<<"/200";
     }
 };
 int main() {
