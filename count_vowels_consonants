@@ -1,0 +1,29 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string s="";
+    char p;
+    int v=0,c=0;
+    cout<<"Enter a sentence:";
+    getline(cin,s);
+    for(int i=0;i<=s.length();i++){
+        p=tolower(s[i]);
+        if(p>='a'&&p<='z'){
+            if(p=='a'||p=='e'||p=='i'||p=='o'||p=='u'){
+            v++;
+            }
+        else{
+            c++;
+            
+        }
+    }
+        
+        
+    }
+    cout<<"total vowels:"<<v<<endl;
+    cout<<"total consonants:"<<c;
+    return 0;
+    
+}
+
