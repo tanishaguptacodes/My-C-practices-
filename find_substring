@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string ss, s="";
+    cout<<"Enter a sentence:";
+    getline(cin,s);
+    cout<<"Enter a sub string:";
+    cin>>ss;
+    size_t c =s.find(ss);
+    if(c!=string::npos){
+        cout<<"substring Found at "<<c<<" position ";
+    }
+    else{
+        cout<<" substring Not found ";
+    }
+    
+    return 0;
+}
