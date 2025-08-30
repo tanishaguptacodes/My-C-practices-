@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string r,t,s="";
+    cout<<"Enter a string:";
+    cin>>s;
+    t=s;
+    for (int i=s.length()-1;i>=0;i--){
+        r+=s[i];
+    }
+    if(t==r){
+        cout<<"String is plaindrome";
+    }
+    else{
+        cout<<"string is not palindrome ";
+    }
+    return 0;
+}
