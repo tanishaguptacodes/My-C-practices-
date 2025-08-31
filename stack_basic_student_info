@@ -1,0 +1,75 @@
+#include <iostream>
+#include<string>
+using namespace std;
+struct student{
+    int roll;
+    string name;
+    float h,e;
+};
+int main() {
+    student s[100];
+    int n,c,p=0;
+    while(true){
+        cout<<"                MENU"<<endl;
+        cout<<"                1.PUSH"<<endl;
+        cout<<"                2.POP"<<endl;
+        cout<<"                3.DISPLAY"<<endl;
+        cout<<"                4.Exit"<<endl;
+        cout<<"Enter your choice:";
+        cin>>c;
+    if(c==1){
+        if(p>=100){
+            cout<<"Overflow "<<endl;}
+        else{
+            cout<<"For how many students you want to add information for :";
+            cin>>n;
+            for(int i=0;i<n;i++){
+                cout<<" For student no.:"<<p+1<<endl;
+                cout<<"Enter student roll number :";
+                cin>>s[p].roll;
+                cout<<"Enter student name:";
+                cin>>s[p].name;
+                cout<<"Enter student marks for hindi /100:";
+                cin>>s[p].h;
+                cout<<"Enter student marks for English/100:";
+                cin>>s[p].e;
+                p++;
+            }
+            cout<<"Information is pushed"<<endl;
+        }
+            
+        
+    }
+    else if(c==2){
+        if(p==0){
+            cout<<"Underflow"<<endl;
+        }
+        else{
+          p--;
+          cout<<"Last student removed"<<endl;
+        }
+    }
+    else if(c==3){
+        if(p==0){
+            cout<<"Underflow"<<endl;
+        }
+        else{
+          cout<<"Student details:"<<endl;
+          for(int i=0;i<p;i++){
+              cout<<"   Student no.:"<<i+1<<endl;
+              cout<<"Roll number:"<<s[i].roll<<endl;
+              cout<<"Name:"<<s[i].name<<endl;
+              cout<<"Total  marks:"<<s[i].h+s[i].e<<"/200"<<endl;
+            }
+        }
+    }
+    else if(c==4){
+        break;
+    }
+    else{
+        cout<<"Invalid choice!!!";
+    }
+
+}
+return 0;
+}
