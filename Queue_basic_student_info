@@ -6,9 +6,53 @@ struct student{
     string name;
     float h,e;
 };
+student s[100];
+int n,c,f=0,r=0;
+void push(){
+    if(r>=100){
+        cout<<"Overflow "<<endl;}
+    else{
+        cout<<"For how many students you want to add information for :";
+        cin>>n;
+        for(int i=0;i<n;i++){
+            cout<<" For student no.:"<<r+1<<endl;
+            cout<<"Enter student roll number :";
+            cin>>s[r].roll;
+            cout<<"Enter student name:";
+            cin>>s[r].name;
+            cout<<"Enter student marks for hindi /100:";
+            cin>>s[r].h;
+            cout<<"Enter student marks for English/100:";
+            cin>>s[r].e;
+            r++;
+        }
+            cout<<"Information is pushed"<<endl;
+        } 
+}
+void pop(){
+    if(f==r){
+        cout<<"Underflow"<<endl;
+    }
+    else{
+        f++;
+        cout<<"First student information removed"<<endl;
+    }
+}
+void display (){
+    if(f==r){
+        cout<<"Underflow"<<endl;
+    }
+    else{
+        cout<<"Student details:"<<endl;
+        for(int i=f;i<r;i++){
+            cout<<"   Student no.:"<<i+1<<endl;
+            cout<<"Roll number:"<<s[i].roll<<endl;
+            cout<<"Name:"<<s[i].name<<endl;
+            cout<<"Total  marks:"<<s[i].h+s[i].e<<"/200"<<endl;
+        }
+    }
+}
 int main() {
-    student s[100];
-    int n,c,f=0,r=0;
     while(true){
         cout<<"                MENU"<<endl;
         cout<<"                1.PUSH"<<endl;
@@ -18,50 +62,13 @@ int main() {
         cout<<"Enter your choice:";
         cin>>c;
     if(c==1){
-        if(r>=100){
-            cout<<"Overflow "<<endl;}
-        else{
-            cout<<"For how many students you want to add information for :";
-            cin>>n;
-            for(int i=0;i<n;i++){
-                cout<<" For student no.:"<<r+1<<endl;
-                cout<<"Enter student roll number :";
-                cin>>s[r].roll;
-                cout<<"Enter student name:";
-                cin>>s[r].name;
-                cout<<"Enter student marks for hindi /100:";
-                cin>>s[r].h;
-                cout<<"Enter student marks for English/100:";
-                cin>>s[r].e;
-                r++;
-            }
-            cout<<"Information is pushed"<<endl;
-        }
-            
-        
+        push();
     }
     else if(c==2){
-        if(f==r){
-            cout<<"Underflow"<<endl;
-        }
-        else{
-          f++;
-          cout<<"First student information removed"<<endl;
-        }
+        pop();
     }
     else if(c==3){
-        if(f==r){
-            cout<<"Underflow"<<endl;
-        }
-        else{
-          cout<<"Student details:"<<endl;
-          for(int i=f;i<r;i++){
-              cout<<"   Student no.:"<<i+1<<endl;
-              cout<<"Roll number:"<<s[i].roll<<endl;
-              cout<<"Name:"<<s[i].name<<endl;
-              cout<<"Total  marks:"<<s[i].h+s[i].e<<"/200"<<endl;
-            }
-        }
+        display ();
     }
     else if(c==4){
         break;
