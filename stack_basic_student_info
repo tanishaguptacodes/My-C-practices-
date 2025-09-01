@@ -46,7 +46,7 @@ int main() {
         }
         else{
           p--;
-          cout<<"Last student removed"<<endl;
+          cout<<"Last student information removed"<<endl;
         }
     }
     else if(c==3){
