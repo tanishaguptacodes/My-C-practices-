@@ -67,7 +67,7 @@ int main() {
         break;
     }
     else{
-        cout<<"Invalid choice!!!";
+        cout<<"Invalid choice!!!"<<endl;
     }
 
 }
