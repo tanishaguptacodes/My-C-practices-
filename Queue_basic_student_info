@@ -55,8 +55,8 @@ void display (){
 int main() {
     while(true){
         cout<<"                MENU"<<endl;
-        cout<<"                1.PUSH"<<endl;
-        cout<<"                2.POP"<<endl;
+        cout<<"                1.ENQUEUE"<<endl;
+        cout<<"                2.DEQUEUE"<<endl;
         cout<<"                3.DISPLAY"<<endl;
         cout<<"                4.Exit"<<endl;
         cout<<"Enter your choice:";
