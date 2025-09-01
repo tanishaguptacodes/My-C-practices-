@@ -7,44 +7,44 @@ struct student{
     float h,e;
 };
 student s[100];
-int n,c,p=0;
-void push(){
-    if(p>=100){
+int n,c,r=0,f=0;
+void enqueue(){
+    if(r>=100){
             cout<<"Overflow "<<endl;}
     else{
         cout<<"For how many students you want to add information for :";
         cin>>n;
         for(int i=0;i<n;i++){
-            cout<<" For student no.:"<<p+1<<endl;
+            cout<<" For student no.:"<<r+1<<endl;
             cout<<"Enter student roll number :";
-            cin>>s[p].roll;
+            cin>>s[r].roll;
             cout<<"Enter student name:";
-            cin>>s[p].name;
+            cin>>s[r].name;
             cout<<"Enter student marks for hindi /100:";
-            cin>>s[p].h;
+            cin>>s[r].h;
             cout<<"Enter student marks for English/100:";
-            cin>>s[p].e;
-            p++;
+            cin>>s[r].e;
+            r++;
         }
         cout<<"Information is pushed"<<endl;
     }
 }
-void pop(){
-    if(p==0){
+void dequeue(){
+    if(f==r){
         cout<<"Underflow"<<endl;
         }
     else{
-        p--; 
-        cout<<"Last student information removed"<<endl;
+        f++; 
+        cout<<"First student information removed"<<endl;
     }
 }
 void display (){
-    if(p==0){
+    if(f==r){
         cout<<"Underflow"<<endl;
         }
     else{
         cout<<"Student details:"<<endl;
-        for(int i=0;i<p;i++){
+        for(int i=f;i<r;i++){
             cout<<"   Student no.:"<<i+1<<endl;
             cout<<"Roll number:"<<s[i].roll<<endl;
             cout<<"Name:"<<s[i].name<<endl;
@@ -56,17 +56,17 @@ void display (){
 int main() {
     while(true){
         cout<<"                MENU"<<endl;
-        cout<<"                1.PUSH"<<endl;
-        cout<<"                2.POP"<<endl;
+        cout<<"                1.ENQUEUE"<<endl;
+        cout<<"                2.DEQUEUE"<<endl;
         cout<<"                3.DISPLAY"<<endl;
-        cout<<"                4.Exit"<<endl;
+        cout<<"                4.EXIT"<<endl;
         cout<<"Enter your choice:";
         cin>>c;
     if(c==1){
-        push();
+        enqueue ();
     }
     else if(c==2){
-        pop();
+        dequeue();
     }
     else if(c==3){
         display();
