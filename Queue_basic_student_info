@@ -8,7 +8,7 @@ struct student{
 };
 student s[100];
 int n,c,f=0,r=0;
-void push(){
+void enqueue(){
     if(r>=100){
         cout<<"Overflow "<<endl;}
     else{
@@ -29,7 +29,7 @@ void push(){
             cout<<"Information is pushed"<<endl;
         } 
 }
-void pop(){
+void dequeue(){
     if(f==r){
         cout<<"Underflow"<<endl;
     }
@@ -62,10 +62,10 @@ int main() {
         cout<<"Enter your choice:";
         cin>>c;
     if(c==1){
-        push();
+        enqueue();
     }
     else if(c==2){
-        pop();
+        dequeue();
     }
     else if(c==3){
         display ();
