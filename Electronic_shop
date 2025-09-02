@@ -7,6 +7,7 @@ public:
 
 long long cphone;  
 string cadd,cname;
+int price;
 
   
 void cinsert(int i,cust customer []){  
@@ -21,10 +22,11 @@ void cinsert(int i,cust customer []){
          
 }  
   
-void cdisplay(int i, cust customer []){  
-    cout<<"Name     :"<<customer[i].cname<<endl;
-    cout<<"Phone no.:"<<customer[i].cphone<<endl;
-    cout<<"Address  :"<<customer[i].cadd<<endl;  
+void cdisplay(int i, cust customer []){
+    cout<<"           For customer "<<(i+1)<<endl;
+    cout<<"           Name     :"<<customer[i].cname<<endl;
+    cout<<"           Phone no.:"<<customer[i].cphone<<endl;
+    cout<<"           Address  :"<<customer[i].cadd<<endl;  
 } 
   
 void csearch(int c, cust customer []){
@@ -34,9 +36,9 @@ void csearch(int c, cust customer []){
     bool found=false;
     for(int i=0;i<c;i++){
         if(customer[i].cphone==sp){
-            cout<<"Name     :"<<customer[i].cname<<endl;
-            cout<<"Phone no.:"<<customer[i].cphone<<endl;
-            cout<<"Address  :"<<customer[i].cadd<<endl; 
+            cout<<"           Name     :"<<customer[i].cname<<endl;
+            cout<<"           Phone no.:"<<customer[i].cphone<<endl;
+            cout<<"           Address  :"<<customer[i].cadd<<endl; 
             found=true;
         }
     }
@@ -83,7 +85,8 @@ class ite{
         cin>>item[i].price;
 }
 void itemdisplay(int i,ite item[]){  
-        cout<<"Item Id:"<<item[i].iid<<endl<<"Item Name:"<<item[i].iname<<endl<<"Model name:"<<item[i].modeln<<endl<<"Item Price:"<<item[i].price<<endl; 
+    cout<<"           For Item "<<(i+1)<<endl;
+    cout<<"           Item Id:"<<item[i].iid<<endl<<"           Item Name:"<<item[i].iname<<endl<<"           Model name:"<<item[i].modeln<<endl<<"           Item Price:"<<item[i].price<<endl; 
 }  
 
 void itemupdate(int i,ite item[]){
@@ -158,14 +161,14 @@ void bsearch(int b,int c,int co,bill bills[]){
     
     for(int i=0;i<b;i++){
         if(bills[i].cphone==phone){
-            cout<<"------------BILL------------"<<endl;
+            cout<<"------------------BILL-------------------"<<endl;
             cout<<"    Name           :"<<bills[i].cname<<endl;
-            cout<<"    Phone no:"<<bills[i].cphone<<endl;
+            cout<<"    Phone no       :"<<bills[i].cphone<<endl;
             cout<<"    Item           :"<<bills[i].iname<<endl;
-            cout<<"    Model name         :"<<bills[i].modeln<<endl;
+            cout<<"    Model name     :"<<bills[i].modeln<<endl;
             cout<<"    Quantity       :"<<bills[i]. quantity<<endl;
             cout<<"    Total          :"<<bills[i].total<<endl;
-            cout<<"----------------------------";
+            cout<<"-----------------------------------------"<<endl;
             found=true;
         }
     }
@@ -178,29 +181,29 @@ void bsearch(int b,int c,int co,bill bills[]){
 };
 int main() {
     cust customer[100];
-    int c=0,co=0;
+    int c=0,co=0,b=0;
     ite item[100];
     bill bills[100];
-    int b=0;
     int choice;
+    
     while(true){
-        cout<<"                 MENU"<<endl;
-        cout<<"       1.For Customer "<<endl;
-        cout<<"       2.For Items"<<endl;
-        cout<<"       3.For bill"<<endl;
-        cout<<"       4.Exit"<<endl;
+        cout<<"==================MENU==================="<<endl;
+        cout<<"            1.For Customer "<<endl;
+        cout<<"            2.For Items"<<endl;
+        cout<<"            3.For bill"<<endl;
+        cout<<"            4.Exit"<<endl;
         cout<<"Enter your choice:";
         cin>>choice;
         if(choice==1){
             int choice1;
             long long sp;
             while(true){
-                cout<<"     SUB MENU"<<endl;
-                cout<<"     1.Insert customer Info"<<endl;
-                cout<<"     2.Display customer Info"<<endl; 
-                cout<<"     3.Search customer Info"<<endl;
-                cout<<"     4.Update customer Info"<<endl;
-                cout<<"     5.Exit"<<endl;
+                cout<<"=================SUB MENU================"<<endl;
+                cout<<"           1.Insert customer Info"<<endl;
+                cout<<"           2.Display customer Info"<<endl; 
+                cout<<"           3.Search customer Info"<<endl;
+                cout<<"           4.Update customer Info"<<endl;
+                cout<<"           5.Exit"<<endl;
                 cout<<"Enter your choice:";
                 cin>>choice1;
                 if(choice1==1){
@@ -249,11 +252,11 @@ int main() {
             string itid;
             bool found=false;
             while(true){
-                cout<<"      SUB MENU"<<endl;
-            cout<<"      1.Insert Item Info"<<endl;
-            cout<<"      2.Display Item Info"<<endl;
-            cout<<"      3.Update Item Info"<<endl;
-            cout<<"      4.Exit"<<endl;
+                cout<<"=================SUB MENU================"<<endl;
+            cout<<"           1.Insert Item Info"<<endl;
+            cout<<"           2.Display Item Info"<<endl;
+            cout<<"           3.Update Item Info"<<endl;
+            cout<<"           4.Exit"<<endl;
             cout<<"Enter your choice:";
             cin>>choice2;
             if(choice2==1){
@@ -305,10 +308,10 @@ int main() {
         else if(choice==3){
             int choice3;
             while(true){
-                cout<<"      SUB MENU"<<endl;
-                cout<<"      1.Insert  Bill"<<endl;
-                cout<<"      2.Search Bill"<<endl;
-                cout<<"      3.Exit"<<endl;
+                cout<<"=================SUB MENU================"<<endl;
+                cout<<"           1.Insert  Bill"<<endl;
+                cout<<"           2.Search Bill"<<endl;
+                cout<<"           3.Exit"<<endl;
                 cout<<"Enter your choice:";
                 cin>>choice3;
                 if(choice3==1){
@@ -341,10 +344,3 @@ int main() {
     }
     return 0;
 }
-    
-    
-    
-    
-    
-    
-    
