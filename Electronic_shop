@@ -196,6 +196,7 @@ int main() {
             int choice1;
             long long sp;
             while(true){
+                cout<<"     SUB MENU"<<endl;
                 cout<<"     1.Insert customer Info"<<endl;
                 cout<<"     2.Display customer Info"<<endl; 
                 cout<<"     3.Search customer Info"<<endl;
@@ -249,7 +250,8 @@ int main() {
             string itid;
             bool found=false;
             while(true){
-            cout<<"      1.Insert Info"<<endl;
+                cout<<"      SUB MENU"<<endl;
+            cout<<"      1.Insert Item Info"<<endl;
             cout<<"      2.Display Item Info"<<endl;
             cout<<"      3.Update Item Info"<<endl;
             cout<<"      4.Exit"<<endl;
@@ -304,6 +306,7 @@ int main() {
         else if(choice==3){
             int choice3;
             while(true){
+                cout<<"      SUB MENU"<<endl;
                 cout<<"      1.Insert  Bill"<<endl;
                 cout<<"      2.Search Bill"<<endl;
                 cout<<"      3.Exit"<<endl;
