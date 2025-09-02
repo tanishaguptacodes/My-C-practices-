@@ -7,7 +7,6 @@ public:
 
 long long cphone;  
 string cadd,cname;
-int price;
 
   
 void cinsert(int i,cust customer []){  
