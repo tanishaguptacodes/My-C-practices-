@@ -1,0 +1,348 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class cust{
+public:
+
+long long cphone;  
+string cadd,cname;
+int price;
+
+  
+void cinsert(int i,cust customer []){  
+        cout<<"For customer "<<(i+1)<<endl;  
+        cout<<"Enter name :";  
+        cin>>customer[i].cname;  
+        cout<<"Enter phone number:";  
+        cin>>customer[i].cphone;  
+        cout<<"Enter address :"; 
+        cin.ignore();
+        getline(cin,customer[i].cadd);  
+         
+}  
+  
+void cdisplay(int i, cust customer []){  
+    cout<<"Name     :"<<customer[i].cname<<endl;
+    cout<<"Phone no.:"<<customer[i].cphone<<endl;
+    cout<<"Address  :"<<customer[i].cadd<<endl;  
+} 
+  
+void csearch(int c, cust customer []){
+    long long sp;
+    cout<<"Enter phone no. :"; 
+    cin>>sp;
+    bool found=false;
+    for(int i=0;i<c;i++){
+        if(customer[i].cphone==sp){
+            cout<<"Name     :"<<customer[i].cname<<endl;
+            cout<<"Phone no.:"<<customer[i].cphone<<endl;
+            cout<<"Address  :"<<customer[i].cadd<<endl; 
+            found=true;
+        }
+    }
+    if(found!=true){
+        cout<<"No such records exists for this phone number"<<endl;}
+    
+    }  
+  
+void cupdate(int c, cust customer []){
+    long long sp;
+    bool found=false;
+    cout<<"Enter phone no.  of the customer for address update:";
+    cin>>sp;
+    for(int i=0;i<c;i++){
+        if(customer[i].cphone==sp){
+            cout<<"Enter new address:";  
+            cin.ignore();  
+            getline(cin,customer[i].cadd);
+            cout<<"Updated successfully "<<endl;
+            found=true;
+            
+            
+        }
+    }
+    if(found!=true){
+        cout<<"No such records exists for this phone number"<<endl;
+    }
+
+}
+};
+class ite{
+    public:
+    float price;
+    string iname,modeln,iid;
+    void iteminsert(int i,ite item[] ){
+        cout<<"For Item no "<<(i+1)<<endl;  
+        cout<<"Enter Item id:";  
+        cin>>item[i].iid;  
+        cout<<"Enter Item name :";
+        cin>>item[i].iname; 
+        cout<<"Enter Model name :";  
+        cin>>item[i].modeln;  
+        cout<<"Enter Item price :";  
+        cin>>item[i].price;
+}
+void itemdisplay(int i,ite item[]){  
+        cout<<"Item Id:"<<item[i].iid<<endl<<"Item Name:"<<item[i].iname<<endl<<"Model name:"<<item[i].modeln<<endl<<"Item Price:"<<item[i].price<<endl; 
+}  
+
+void itemupdate(int i,ite item[]){
+    cout<<"Enter new  price:";  
+    cin>>item[i].price;
+    cout<<"Updated successfully "<<endl;
+    
+}
+};
+
+class bill{
+    public:
+    string modeln,iname,cname;
+    long long cphone;
+    float price,total;
+    int quantity;
+    void binsert(cust customer[],int c,ite item[],int co){
+        if(c==0||co==0){
+            cout<<"No Customer or Item data available!!"<<endl;
+        }
+        else{
+            long long phone;
+            string id;
+            
+            cout<<"Enter customer phone no. :";
+            cin>>phone;
+            bool cfound=false;
+            for(int i=0;i<c;i++){
+                if(customer[i].cphone==phone){
+                    cname=customer[i].cname;
+                    cphone=customer[i].cphone;
+                    cfound=true;
+                    break;
+                }
+            }
+            if(cfound!=true){
+                cout<<"Customer record not found"<<endl;
+                return;
+            }
+            cout<<"Enter item ID:";
+            cin>>id;
+            bool ifound=false;
+            for(int i=0;i<co;i++){
+                if(item[i].iid==id){
+                    iname=item[i].iname;
+                    modeln=item[i].modeln;
+                    price=item[i].price;
+                    ifound=true;
+                    break;
+                }
+            }
+            if(ifound!=true){
+                cout<<"Item record not found!!"<<endl;
+                return;
+            }
+            cout<<"Enter quantity:";
+            cin>>quantity;
+            total=price*quantity;
+            cout<<"Bill inserted successfully "<<endl;
+    }
+}
+void bsearch(int b,int c,int co,bill bills[]){
+    long long phone;
+    bool found=false;
+    if(c==0||co==0){
+            cout<<"No Customer or Item data available!!"<<endl;
+        }
+    
+    else{
+    cout<<"Enter phone number of customer:";
+    cin>>phone;
+    
+    for(int i=0;i<b;i++){
+        if(bills[i].cphone==phone){
+            cout<<"------------BILL------------"<<endl;
+            cout<<"    Name           :"<<bills[i].cname<<endl;
+            cout<<"    Phone no:"<<bills[i].cphone<<endl;
+            cout<<"    Item           :"<<bills[i].iname<<endl;
+            cout<<"    Model name         :"<<bills[i].modeln<<endl;
+            cout<<"    Quantity       :"<<bills[i]. quantity<<endl;
+            cout<<"    Total          :"<<bills[i].total<<endl;
+            cout<<"----------------------------";
+            found=true;
+        }
+    }
+    if(found!=true){
+        cout<<"Bill not found"<<endl;
+    }
+    }
+    
+}
+};
+int main() {
+    cust customer[100];
+    int c=0,co=0;
+    ite item[100];
+    bill bills[100];
+    int b=0;
+    int choice;
+    while(true){
+        cout<<"                 MENU"<<endl;
+        cout<<"       1.For Customer "<<endl;
+        cout<<"       2.For Items"<<endl;
+        cout<<"       3.For bill"<<endl;
+        cout<<"       4.Exit"<<endl;
+        cout<<"Enter your choice:";
+        cin>>choice;
+        if(choice==1){
+            int choice1;
+            long long sp;
+            while(true){
+                cout<<"     1.Insert customer Info"<<endl;
+                cout<<"     2.Display customer Info"<<endl; 
+                cout<<"     3.Search customer Info"<<endl;
+                cout<<"     4.Update customer Info"<<endl;
+                cout<<"     5.Exit"<<endl;
+                cout<<"Enter your choice:";
+                cin>>choice1;
+                if(choice1==1){
+                    int n;
+                    cout<<"For how many customers :";
+                    cin>>n;  
+                    for(int i=c;i<c+n;i++){
+                    customer[i].cinsert(i, customer);
+                    }
+                    c+=n;
+                    cout<<"Information has been added!"<<endl;
+                }
+                else if(choice1==2){
+                    if(c==0){ 
+                        cout<<"No information has been insert yet!"<<endl;} 
+                    else{  
+        for(int i=0;i<c;i++){
+            customer[i].cdisplay(i,customer);
+        }
+                }
+            }
+            else if(choice1==3){
+                if(c==0){
+                    cout<<"No information has been insert yet!"<<endl;}
+                else{
+                    customer[0].csearch(c, customer);
+                }
+                
+            }
+            else if(choice1==4){
+                if(c==0){
+                    cout<<"No information has been insert yet!"<<endl;}
+                    else{
+                    customer[0].cupdate(c, customer);}
+                
+            }
+            else if(choice1==5){
+                break;
+            }
+            else{
+                cout<<"Invalid choice!!"<<endl;}
+            }
+        }
+        else if (choice==2){
+            int it,choice2;
+            string itid;
+            bool found=false;
+            while(true){
+            cout<<"      1.Insert Info"<<endl;
+            cout<<"      2.Display Item Info"<<endl;
+            cout<<"      3.Update Item Info"<<endl;
+            cout<<"      4.Exit"<<endl;
+            cout<<"Enter your choice:";
+            cin>>choice2;
+            if(choice2==1){
+                cout<<"For how many Items:"; 
+                cin>>it;
+                for(int i=co;i<co+it;i++){
+                    item[i].iteminsert(i,item);
+                   } co+=it;
+                    cout<<"Information has been added!"<<endl;
+            }
+            else if(choice2==2){
+                if(co==0){  
+                    cout<<"No information has been insert yet!"<<endl;
+                    
+                }
+                else{  
+                    for(int i=0;i<co;i++){
+                        item[i].itemdisplay(i,item);
+                    }
+                }    
+            }
+            else if(choice2==3){
+                found=false;
+                if(co==0){
+                    cout<<"No information has been insert yet!"<<endl;
+                    
+                }
+                else{
+                    cout<<"Enter Item ID. of item for price update:";
+                    cin>>itid;
+                    for(int i=0;i<co;i++){
+                        if(item[i].iid==itid){
+                        item[i].itemupdate(i,item);
+                        found=true;}
+                    }
+                    if(found!=true){
+                        cout<<"No such records exists for this Item id  "<<endl;}
+                    
+                }
+            
+            }
+            else if(choice2==4){
+                break;}
+            else{
+                cout<<"Invalid choice!!";
+            }
+            }
+        }
+        else if(choice==3){
+            int choice3;
+            while(true){
+                cout<<"      1.Insert  Bill"<<endl;
+                cout<<"      2.Search Bill"<<endl;
+                cout<<"      3.Exit"<<endl;
+                cout<<"Enter your choice:";
+                cin>>choice3;
+                if(choice3==1){
+                    bills[b].binsert(customer,c,item,co);
+                    b++;
+                }
+                else if(choice3==2){
+                    if(b==0){
+                        cout<<"No Bills records has been insert yet!!"<<endl;
+                    }
+                    else{
+                        bills[0].bsearch(b,c,co,bills);
+                        
+                    }
+                }
+                else if(choice3==3){
+                    break;
+                }
+                else{
+                    cout<<"Invalid choice!!"<<endl;
+                }
+            }
+        }
+        else if(choice==4){
+            break;
+        }
+        else{
+            cout<<"Invalid choice!!"<<endl;
+        }
+    }
+    return 0;
+}
+    
+    
+    
+    
+    
+    
+    
