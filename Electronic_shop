@@ -2,6 +2,37 @@
 #include<string>
 using namespace std;
 
+class user{
+    string user_id,pswwd;
+    public:
+    void registration(){
+        cout<<"=============USER REGISTRATION==========="<<endl;
+        cout<<"            Enter User ID:";
+        cin>>user_id;
+        cout<<"            Enter Password:";
+        cin>>pswwd;
+        cout<<"Registration successfull !!"<<endl;
+    }
+    bool login(){
+        string uid,pswd;
+        while(true){
+            cout<<"===============USER LOGIN================"<<endl;
+            cout<<"            Enter User ID:";
+            cin>>uid;
+            cout<<"            Enter Password:";
+            cin>>pswd;
+            if(user_id==uid&&pswwd==pswd){
+                return 1;
+            }
+            else{
+                cout<<"              LOGIN FAILED"<<endl;
+                cout<<"         WRONG ID OR PASSWORD"<<endl<<"            PLEASE TRY AGAIN"<<endl;
+            }
+        }
+        
+    }
+};
+
 class cust{
 public:
 
@@ -9,7 +40,7 @@ long long cphone;
 string cadd,cname;
 int price;
 
-  
+ 
 void cinsert(int i,cust customer []){  
         cout<<"For customer "<<(i+1)<<endl;  
         cout<<"Enter name :";  
@@ -180,6 +211,12 @@ void bsearch(int b,int c,int co,bill bills[]){
 }
 };
 int main() {
+    user u;
+    u.registration();
+    bool login=u.login();
+    if(login){
+        cout<<"   WELCOME TO  SHOP MANAGEMENT SYSTEM "<<endl;
+    
     cust customer[100];
     int c=0,co=0,b=0;
     ite item[100];
@@ -341,6 +378,7 @@ int main() {
         else{
             cout<<"Invalid choice!!"<<endl;
         }
+    } 
     }
     return 0;
 }
