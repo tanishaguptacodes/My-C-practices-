@@ -2,7 +2,8 @@
 using namespace std;
 int prime(int a){
     if(a<=1){
-       cout<<"not prime"; 
+       cout<<"not prime";
+       return 0;
     }
     else{
         bool p=true;
